@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>all html tag</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Cinzel:wght@700&display=swap');
+
+        /* प्रिंट सेटिंग्स */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            body {
+                background-image: url("Jay_siyaram.jpg") !important;
+                background-color: White !important;
+            }
+        }
+
+        /* बैकग्राउंड और मुख्य ढांचा */
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            background-image: url("Jay_siyaram.jpg");
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* 1. इंटरनल लिंक्स (Quick Navigation) को Apex Style लुक */
+        .nav-links-container {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #ff3333;
+            box-shadow: 0 0 15px rgba(255, 51, 51, 0.4);
+            margin: 20px 0;
+            backdrop-filter: blur(5px);
+        }
+        .nav-links-container a {
+            color: #fff !important;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 5px;
+            background: linear-gradient(45deg, #ff3333, #b30000);
+            border-radius: 5px;
+            text-shadow: 1px 1px 2px black;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+        }
+        .nav-links-container a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 51, 51, 0.8);
+            background: linear-gradient(45deg, #b30000, #ff3333);
+        }
+
+        /* लिस्ट्स और डेफिनिशन लिस्ट्स की स्टाइलिंग */
+        ul, ol, dl {
+            background: rgba(255, 255, 255, 0.92);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            border-left: 5px solid red;
+            margin: 20px 0;
+        }
+        dt { font-weight: bold; color: #111; font-size: 1.1em; margin-top: 10px; }
+        dd { color: #333; margin-left: 20px; padding: 3px 0; }
+
+        /* 2. टेबल इन HTML (Neon Green Advanced Glow Style - फिक्स किया गया बैकग्राउंड) */
+        .table-wrapper {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 20px;
+            border-radius: 15px;
+            border: 3px solid #00ff00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+            display: inline-block;
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+        table {
+            border-collapse: separate;
+            border-spacing: 5px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th {
+            background: linear-gradient(180deg, #8b0000, #a52a2a) !important;
+            color: #fff !important;
+            font-family: 'Cinzel', serif;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            letter-spacing: 1px;
+            padding: 15px !important;
+        }
+        td {
+            color: #000 !important;
+            font-weight: bold;
+            text-align: center;
+            padding: 12px !important;
+            border-radius: 4px;
+        }
+        table img {
+            border: 3px solid #007bff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            object-fit: cover;
+        }
+
+        /* 3. फॉर्म का एकदम FIX आकार (हर डिवाइस पर एक समान स्ट्रक्चर) */
+        .main-card { 
+            background: #ffffff; 
+            border: 3px solid #007bff; 
+            border-radius: 15px; 
+            padding: 25px; 
+            width: 380px !important; 
+            min-width: 380px !important;
+            max-width: 380px !important;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.3); 
+            margin: 30px auto; 
+            font-family: 'Ubuntu', sans-serif; 
+            color: black; 
+            box-sizing: border-box;
+        }
+        .top-section { display: flex; gap: 15px; margin-bottom: 15px; }
+        .photo-box { width: 100px; height: 120px; border: 2px solid #007bff; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: #f9f9f9; overflow: hidden; flex-shrink: 0; }
+        #preview { width: 100%; height: 100%; object-fit: cover; display: none; }
+        .inputs-section { flex-grow: 1; }
+        label { font-weight: bold; font-size: 14px; display: block; margin-top: 10px; color: black; }
+        .pass-container { position: relative; margin-top: 5px; }
+        .show-btn { position: absolute; right: 2px; top: 2px; padding: 5px 10px; font-size: 12px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;}
+        .submit-btn { width: 100%; background: #28a745; color: white; border: none; padding: 12px; border-radius: 5px; margin-top: 20px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+        .reset-btn { width: 100%; background: #f44336; color: white; border: none; padding: 12px; border-radius: 5px; margin-top: 10px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+        .group { margin-top: 12px; background: #f8f9fa; padding: 8px; border-radius: 6px; border: 1px solid #ddd;}
+        .option-label { margin-left: 4px; margin-right: 10px; font-size: 13px;}
+        input[type="text"], input[type="password"], select, textarea {
+            border: 1px solid #aaa;
+            padding: 6px;
+            border-radius: 4px;
+        }
+
+        /* 4. वीडियो और ऑडियो सेक्शन्स (Theater Style Layout) */
+        .media-card {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #007bff;
+            box-shadow: 0 8px 20px rgba(0,123,255,0.3);
+            margin: 25px 0;
+            max-width: 600px;
+        }
+        .media-card font {
+            text-shadow: 0 0 10px rgba(0,123,255,0.8);
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 15px;
+        }
+        video {
+            border: 3px solid #007bff !important;
+            border-radius: 10px !important;
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+            background: #000;
+        }
+        .fullscreen-btn {
+            margin-top: 12px;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+        .fullscreen-btn:hover {
+            background: linear-gradient(45deg, #0056b3, #007bff);
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
+        }
+        audio {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body bgcolor="White" background="Jay_siyaram.jpg" text="black" link="black" vlink="green" alink="blue" leftmargin="20" topmargin="70">
+    
+    <font face="balloon XBd BT" color="red" size="6">
+        <h3>ALL HTML TAG OF CLASS 10TH</h3>
+    </font>
+    
+    <hr size="3" width="100%" color="red" align="center" noshade="5">
+    
+    <div class="nav-links-container">
+        <a href="#ALPHABAT">ALPHABAT</a><br>
+        <a href="#SOME DETAIL">SOME DETAIL</a><br>
+        <a href="#Now We can Study about List in HTML">Now We can Study about List in HTML</a><br>
+        <a href="#बाज़ार में शोषण के रूप">बाज़ार में शोषण के रूप</a><br>
+        <a href="#CARBON COMPOUND">CARBON COMPOUND</a><br>
+        <a href="#TABLE">TABLE</a><br>
+        <a href="#LINKING">LINKING</a><br>
+        <a href="#FILL FORM">FILL FORM</a><br>
+        <a href="#VIDEO FILE">VIDEO FILE</a><br>
+        <a href="#AUDIO FILE">AUDIO FILE</a><br>
+    </div>
+    
+    <hr size="3" width="100%" color="red" align="center" noshade="5">
+    
+    <center>
+        <a name="ALPHABAT"><big>ALPHABAT</big> (<small>A TO Z</small>)</a>
+        <h1>A B C D</h1>
+        <h2>E F G H</h2>
+        <h3>I J K L</h3>
+        <b>M N O P</b><br>
+        <h4>Q R S T</h4>
+        <h5>U V W X</h5>
+        <h6> Y Z</h6>
+    </center>
+    
+    <hr size="3" width="33.33%" color="red" align="right" noshade="5">
+    <hr size="3" width="33.33%" color="red" align="left" noshade="5">
+    
+    <h1>
+        <a name="SOME DETAIL">SOME DETAIL<br><br></a>
+    </h1>
+    
+    <h3> html is <s>a programing language </s><u>not a programing language</u> like C ,C++,JAVA,etc.<br></h3>
+    <p>
+        HTML is a simple language, but following <strong>Security</strong> rules is very important.
+    </p>
+    <h3> <I>THANKS</I></h3>
+    
+    <hr size="3" width="100%" color="red" align="center" noshade="5">
+    
+    <a name="Now We can Study about List in HTML"></a>
+    <H2> <p>Now We can Study about List in HTML</p></H2>
+    
+    <ul type="disc">
+        <li>RED</li>
+        <li>BLUE</li>
+        <li>GREEN</li>
+    </ul> 
+
+    <ul type="circle">
+        <li>RED</li>
+        <li>BLUE</li>
+        <li>GREEN</li>
+    </ul> 
+
+    <ul type="square">
+        <li>RED</li>
+        <li>BLUE</li>
+        <li>GREEN</li>
+    </ul> 
+
+    <ol type="A"> 
+        <li>APPLE</li>
+        <li>BLUEBERRY</li>
+        <li>GRASS</li>
+    </ol> 
+
+    <ol type="a"> 
+        <li>APPLE</li>
+        <li>BLUEBERRY</li>
+        <li>GRASS</li>
+    </ol> 
+
+    <ol type="I"> 
+        <li>APPLE</li>
+        <li>BLUEBERRY</li>
+        <li>GRASS</li>
+    </ol> 
+
+    <ol type="i"> 
+        <li>APPLE</li>
+        <li>BLUEBERRY</li>
+        <li>GRASS</li>
+    </ol> 
+
+    <ol type="1" start="1"> 
+        <li>APPLE</li>
+        <li>BLUEBERRY</li>
+        <li>GRASS</li>
+    </ol>
+
+    <dl>
+        <dt><b>HTML</b></dt>
+        <dd>What is HTML</dd>
+        <dd>History of HTML</dd>
+        <dd>Evolution of HTML</dd>
+        <dd>Features of HTML</dd>
+    </dl>
+
+    <dl>
+        <dt><b>Internet</b></dt>
+        <dd>What is internet</dd>
+        <dd>History of internet</dd>
+        <dd>Terminology of internet</dd>
+        <dd>Internet protocol</dd>
+    </dl>
+
+    <dl>
+        <dt><b>Cyber Ethics</b></dt>
+        <dd>What is Cyber ethics</dd>
+        <dd>What is netiquette</dd>
+        <dd>Email netiquette</dd>
+        <dd>Software license</dd>
+    </dl>
+
+    <dl>
+        <dt><b>HTML Definition</b></dt>
+        <dd>HTML stands for Hyper Text Markup Language.</dd>
+        <ul type="square">
+            <li>Basic terminology of HTML:</li>
+            <ol type="1">
+                <li>Tags</li>
+                <li>Elements</li>
+                <li>Attributes</li>
+            </ol>
+        </ul>
+    </dl>
+    
+    <hr size="3" width="100%" color="red" align="center" noshade="5">
+    <br>
+    
+    <a name="बाज़ार में शोषण के रूप"></a>
+    <div style="background: rgba(255,255,255,0.95); padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+        <font color="green" size="5">बाज़ार में शोषण के रूप</font>
+        <font size="3" color="blue">
+            <p>
+                <font color="red"><b>मिलावट (Adulteration):</b></font>   असली सामान में घटिया या ज़हरीली चीज़ें मिलाना (जैसे काली मिर्च में पपीते के बीज)।<br>
+                <font color="red"><b>कम वजन या माप:</b></font> खराब तराजू या पत्थरों का उपयोग करके ग्राहक को कम सामान देना।<br>
+                <font color="red"><b>कालाबाज़ारी: </b></font>सामान का स्टॉक जमा कर लेना और बाज़ार में कमी दिखाकर उसे ऊँचे दामों पर बेचना।<br>
+                <font color="red"><b>भ्रामक विज्ञापन:</b> </font>टीवी पर दिखाए जाने वाले ऐसे दावे जो हकीकत में संभव नहीं हैं, जैसे रातों-रात लंबाई बढ़ाना या गोरा करना।<br>
+                <font color="red"><b>अतिरिक्त वसूली:</b> </font>एमआरपी (MRP) से अधिक पैसे माँगना या कूलिंग चार्ज के नाम पर पैसे लेना।
+            </p>
+        </font>
+        <img src="images.jpeg" align="middle" border="3" width="95%" height="45%" hspace="5" vspace="1" alt="social science project work" style="border-style: groove; border-color: darkviolet; border-radius: 6px;">
+        <blockquote cite="https://www.consumerhelp.in">
+            <font size="4" color="lime">
+                "उपभोक्ता संरक्षण अधिनियम के अनुसार, प्रत्येक ग्राहक को वस्तु की गुणवत्ता और शुद्धता जानने का अधिकार है।"
+            </font>
+        </blockquote>
+    </div>
+    
+    <br><br>
+    <hr size="3" width="160%" color="red" align="left" noshade="5">
+    
+    <a name="CARBON COMPOUND"></a>
+    <font size="5" color="green">
+        <pre style="height: 170px; width: 530px; background: #f0f8ff; margin-top: 0px; margin-bottom: 0px; border-radius: 8px; border-left: 5px solid red; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 10px;">
+        <font size="8" color="red">  CARBON COMPOUND</font>
+<font size="5" color="black">
+ ALKLANE     NAME       ALKLENE      NAME   </font>
+ C<SUb>3</SUb>H<SUb>8</SUb>        Propane    C<sub>3</sub>H<sub>6</sub>         Propene
+ C<SUb>4</SUb>H<SUb>10</SUb>       butane     C<sub>4</sub>H<sub>8</sub>         butene
+        </pre>
+    </font>
+    
+    <br><br>
+    
+    <div style="font-family: sans-serif; line-height: 2.0; color: black; background: #f0f8ff; padding: 15px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-left: 5px solid blue; max-width: 530px;">
+        <font size="5" color="red">Mathematical Identities:</font><br>
+        1. (a + b)<sup>2</sup> = a<sup>2</sup> + b<sup>2</sup> + 2ab <br>
+        2. (a - b)<sup>2</sup> = a<sup>2</sup> + b<sup>2</sup> - 2ab <br>
+        3. (a + b)<sup>3</sup> = a<sup>3</sup> + b<sup>3</sup> + 3ab(a + b) <br>
+        4. Pythagorean Theorem: a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>
+    </div>
+    
+    <br><br>
+    
+    <a name="TABLE"></a>
+
+    <hr size="3" width="160%" color="red" align="left" noshade="5">
+    
+    <font size="5" COLOR="GREEN">TABLE IN HTML</font><br>
+
+    <div class="table-wrapper">
+        <table border="2" bgcolor="lime" height="39%" width="100%" cellpadding="1" cellspacing="3">
+            <tr>
+                <th colspan="5"><font size="4" color="brown" face="impact">PERDONAL DETAILS</font></th>
+            </tr>
+            <tr>
+                <th style="width: 130px;">PHOTO</th>
+                <th>NAME</th>
+                <TH>CLASS</TH>
+                <TH>ROLL NO.</TH>
+                <TH>MOBILE NO.</TH>
+            </tr>
+            <tr>
+                <td rowspan="2" style="width: 130px; height: 130px; padding-bottom: 0px;"><img src="IMG-20250420-WA0044.jpg" width="130px" height="130px"></td>
+                <td>AJAY</td>
+                <Td>12TH "B"</Td>
+                <Td>171xxxx</Td>
+                <Td>+91 805xxxxxxx</Td>
+            </tr>
+        </table>
+    </div>
+    
+    <hr size="3" width="160%" color="red" align="center" noshade="5">
+    
+    <A NAME="LINKING"></A>
+    <font SIZE="5" COLOR="blue">EXTERLAL AND MAILTO LINKING</font><br>
+    <a href="file.html" style="color: blue; font-weight: bold;">SCIENCE BOOK CLASS X</a><br>
+    <A href="MAILTO:kuldeepjangra850@gmail.com" style="color: blue; font-weight: bold;">SEND FEEDBACK</A>
+    <br><br>
+    
+    <hr size="5" width="160%" color="red" align="center" noshade="5">
+    
+    <a name="FILL FORM"></a>
+    <font size="7" color="green">FILL FORM</font><br>
+    <hr size="3" width="160%" color="red" align="center" noshade="5">
+    <center><font size="5" color="green">REGISTRATION FORM</font></center>
+    
+    <div class="main-card">
+        <form id="myForm" method="POST" action="mailto:kuldeepjangra850@gmail.com" name="myform">
+            <div class="top-section">
+                <div class="photo-box">
+                    <span id="label-text" style="font-size: 12px; color: #666;">PHOTO</span>
+                    <img id="preview" src="">
+                </div>
+                <div class="inputs-section">
+                    <label>Name:</label>
+                    <input type="text" placeholder="Enter Name">
+                    <label>Password:</label>
+                    <div class="pass-container">
+                        <input type="password" id="pass" placeholder="Password" style="width: 70%; padding-right: 50px;">
+                        <button type="button" class="show-btn" id="btnToggle" onclick="togglePassword()">Show</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-section">
+                <label>Choose Photo:</label>
+                <input type="file" accept="image/*" onchange="showImg(this)" style="font-size: 12px;">
+
+                <div class="group">
+                    <label>Stream:</label>
+                    <input type="radio" name="stream"><span class="option-label">Commerce</span>
+                    <input type="radio" name="stream"><span class="option-label">Science</span>
+                    <input type="radio" name="stream"><span class="option-label">Art</span>
+                </div>
+
+                <div class="group">
+                    <label>Gender:</label>
+                    <input type="radio" name="gender"><span class="option-label">Male</span>
+                    <input type="radio" name="gender"><span class="option-label">Female</span>
+                    <input type="radio" name="gender"><span class="option-label">Other</span>
+                </div>
+
+                <div class="group">
+                    <label>Hobbies:</label>
+                    <input type="checkbox"><span class="option-label">Drawing</span>
+                    <input type="checkbox"><span class="option-label">Dance</span>
+                </div>
+
+                <div class="group">
+                    <label>Select City (Combo Box):</label>
+                    <select name="city" style="width: 100%; padding: 5px; margin-top: 5px; border-radius: 5px;">
+                        <option value="UTRAKHAND">UTRAKHAND</option>
+                        <option value="PUNJAB">PUNJAB</option>
+                        <option value="HARYANA">HARYANA</option>
+                        <option value="RAJSTHAN">RAJSTHAN</option>
+                        <option value="GUJARAT">GUJARAT</option>
+                        <option value="UTTAR PRADESH">UTTAR PRADESH</option>
+                        <option value="Madhya Pradesh">Madhya PRADESH</option>
+                        <option value="BIHAR">BIHAR</option>
+                        <option value="JHARKHAND">JHARKHAND</option>
+                        <option value="CHHATISGARH">CHHATISGARH</option>
+                        <option value="ODISHA">ODISHA</option>
+                        <option value="WEST BENGAL">WEST BENGAL</option>
+                        <option value="SIKKIM">SIKKIM</option>
+                        <option value="ARUNACHAL PRADESH">ARUNACHAL PRADESH</option>
+                        <option value="ASSAM">ASSAM</option>
+                        <option value="NAGALAND">NAGALAND</option>
+                        <option value="MEGHALAYA">MEGHALAYA</option>
+                        <option value="MANIPUR">MANIPUR</option>
+                        <option value="TRIPURA">TRIPURA</option>
+                        <option value="MIZORAM">MIZORAM</option>
+                        <option value="MAHARASTRA">MAHARASTRA</option>
+                        <option value="TELANGANA">TELANGANA</option>
+                        <option value="KARANATAKA">KARANATAKA</option>
+                        <option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
+                        <option value="GOA">GOA</option>
+                        <option value="KERAL">KERAL</option>
+                        <option value="TAMILNADU">TAMILNADU</option>
+                    </select>
+                </div>
+
+                <div class="group">
+                    <label>Address (Textarea):</label>
+                    <textarea name="address" rows="3" style="width: 95%; padding: 5px; margin-top: 5px; border-radius: 4px; font-family: sans-serif;" placeholder="Enter your full address"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Form</button>
+                <input type="reset" value="Reset Form" class="reset-btn" onclick="resetPhoto()">
+            </div>
+        </form>
+    </div>
+
+    <br><br>
+    <hr size="5" width="160%" color="red" align="center" noshade="5">
+    
+    <a name="VIDEO FILE"></a>
+    
+    <div class="media-card">
+        <font size="5" color="blue">VIDEO FILE 1: DAIRY</font>
+        <video id="myVideo1" controls width="100%">
+            <source src="dairy.mp4" type="video/mp4">
+        </video>
+        <button class="fullscreen-btn" onclick="videoFull('myVideo1')">FULL SCREEN</button>
+    </div>
+
+    <div class="media-card">
+        <font size="5" color="blue">VIDEO FILE 2: WEBSITE</font>
+        <video id="myVideo2" controls width="100%">
+            <source src="website.mp4" type="video/mp4">
+        </video>
+        <button class="fullscreen-btn" onclick="videoFull('myVideo2')">FULL SCREEN</button>
+    </div>
+    
+    <div class="media-card">
+        <font size="5" color="blue">VIDEO FILE 3: CONTACT</font>
+        <video id="myVideo3" controls width="100%">
+            <source src="Phone_number.mp4" type="video/mp4">
+        </video>
+        <button class="fullscreen-btn" onclick="videoFull('myVideo3')">FULL SCREEN</button>
+    </div>
+
+    <hr size="3" width="160%" color="red" align="center" noshade="5">
+    
+    <div class="media-card" style="border-color: #ff3333;">
+        <a name="AUDIO FILE"></a>
+        <font size="5" color="blue">AUDIO FILE PLAYER</font>
+        <audio controls muted>
+            <source src="Shree_Hanuman_Chalisa_Original_Video _🙏🌺_ GULSHAN KUMAR _HARIHARAN .mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script>
+        function togglePassword() {
+            var p = document.getElementById("pass");
+            var b = document.getElementById("btnToggle");
+            if (p.type === "password") {
+                p.type = "text";
+                b.innerText = "Hide";
+            } else {
+                p.type = "password";
+                b.innerText = "Show";
+            }
+        }
+
+        function showImg(input) {
+            if (input.files && input.files[0]) {
+                var r = new FileReader();
+                r.onload = function(e) {
+                    document.getElementById('preview').src = e.target.result;
+                    document.getElementById('preview').style.display = 'block';
+                    document.getElementById('label-text').style.display = 'none';
+                }
+                r.readAsDataURL(input.files[0]);
+            }
+        }
+
+        document.getElementById('myForm').addEventListener('reset', function() {
+            setTimeout(resetPhoto, 10);
+        });
+
+        function resetPhoto() {
+            document.getElementById('preview').style.display = 'none';
+            document.getElementById('label-text').style.display = 'block';
+            document.getElementById("btnToggle").innerText = "Show";
+        }
+
+        function videoFull(videoId) {
+            var v = document.getElementById(videoId);
+            if (v.requestFullscreen) {
+                v.requestFullscreen();
+            } else if (v.webkitRequestFullscreen) { 
+                v.webkitRequestFullscreen();
+            } else if (v.msRequestFullscreen) { 
+                v.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
